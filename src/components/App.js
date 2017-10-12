@@ -7,11 +7,16 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.handleClick = this.handleClick.bind(this);
+    this.increment = this.increment.bind(this);
+    this.decrement = this.decrement.bind(this);
   }
 
-  handleClick() {
+  increment() {
     this.props.increment(this.props.value);
+  }
+
+  decrement() {
+    this.props.decrement(this.props.value);
   }
 
   render() {
@@ -22,7 +27,8 @@ class App extends Component {
         <h1>db-feed-ui</h1>
         <p>{ value }</p>
 
-        <button onClick={ this.handleClick }>Add</button>
+        <button onClick={ this.increment }>Add</button>
+        <button onClick={ this.decrement }>Decrement</button>
       </div>
     );
   }

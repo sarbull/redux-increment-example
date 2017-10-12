@@ -5,3 +5,11 @@ export function increment(value) {
     value
   };
 }
+
+export const DECREMENT='DECREMENT';
+export function decrement(value) {
+  return {
+    type: DECREMENT,
+    value
+  };
+}

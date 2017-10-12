@@ -1,7 +1,10 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 import * as Actions from '../actions/example';
+
+import Button from 'material-ui/Button';
+import Grid from 'material-ui/Grid';
 
 class App extends Component {
   constructor(props) {
@@ -23,18 +26,44 @@ class App extends Component {
     const { value } = this.props;
 
     return (
-      <div>
-        <h1>db-feed-ui</h1>
-        <p>{ value }</p>
+      <Grid container>
+        <Grid item xs={12}>
+          <Grid container justify="center">
+            <Grid item>
+              <h1>db-feed-ui</h1>
+            </Grid>
+          </Grid>
+          <Grid container justify="center">
+            <Grid item>
+              <h2>{ value }</h2>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item xs={12}>
+          <Grid container justify="center">
+            <Grid item>
+              <Button onClick={ this.increment }
+                      raised
+                      color="primary">
+                Increment
+              </Button>
+            </Grid>
 
-        <button onClick={ this.increment }>Add</button>
-        <button onClick={ this.decrement }>Decrement</button>
-      </div>
+            <Grid item>
+              <Button onClick={ this.decrement }
+                      raised
+                      color="accent">
+                Decrement
+              </Button>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
     );
   }
 }
 
-function mapStateToProps({ example }, action) {
+function mapStateToProps({example}, action) {
   return {
     value: example.value
   };

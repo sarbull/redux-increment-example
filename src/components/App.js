@@ -30,7 +30,7 @@ class App extends Component {
         <Grid item xs={12}>
           <Grid container justify="center">
             <Grid item>
-              <h1>db-feed-ui</h1>
+              <h1>redux-increment-example</h1>
             </Grid>
           </Grid>
           <Grid container justify="center">
